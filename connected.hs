@@ -2,7 +2,7 @@ import PropLang.Gtk
 import PropLang.Variable
 import PropLang.Event
 
-import Char
+import Data.Char
 
 caesar n = map (caesar' n)
 caesar' n c | isAlpha c = chr $ (((ord(c)-ord('a'))+n) `mod` 26) + ord('a')

@@ -41,6 +41,13 @@ newPredValue x f e = do
     setter i x = do
         old <- readIORef i
         writeIORef i x
-        if f x
+        {- following three lines cause compiler errors
+        /home/mikeh/proplang/PropLang/Value.hs:44:12: error:
+    Unexpected semi-colons in conditional:
+        if f x; then raise e; else return ()
+    Perhaps you meant to use DoAndIfThenElse?
+
+        -}
+        if f (x)
         then raise e
         else return ()

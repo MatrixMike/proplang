@@ -93,13 +93,13 @@ var1 =<= var2 = var1 =< with1 var2 id
 tie :: Var a -> Var b -> (a->b) -> (b->a) ->  IO ()
 tie var1@(Var val1 _ _) var2@(Var val2 _ _) f12 f21 = do
         -- I tried something sophisticated to avoid loops, but 
-	-- it did not work out. This will of course only work if 
-	-- the Variables don't fire if they are set to what they are
-	-- set already...
-	-- Note that I'm not using =<=, not not override the sources
-	var1 += (valSet val2 .f12 =<< getVar var1 )
-	var2 += (valSet val1 .f21 =<< getVar var2 )
-	return ()
+    -- it did not work out. This will of course only work if 
+    -- the Variables don't fire if they are set to what they are
+    -- set already...
+    -- Note that I'm not using =<=, not not override the sources
+    var1 += (valSet val2 .f12 =<< getVar var1 )
+    var2 += (valSet val1 .f21 =<< getVar var2 )
+    return ()
 
 -- | Tie two Variables both ways 
 (=<>=) :: Var a -> Var a -> IO ()

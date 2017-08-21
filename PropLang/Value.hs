@@ -39,7 +39,7 @@ newPredValue x f e = do
     return $ Value (setter i) (readIORef i)
     where
     setter i x = do
-        old <- readIORef i
+--        old <- readIORef i
         writeIORef i x
         {- following three lines cause compiler errors
         /home/mikeh/proplang/PropLang/Value.hs:44:12: error:
@@ -48,6 +48,8 @@ newPredValue x f e = do
     Perhaps you meant to use DoAndIfThenElse?
 
         -}
-        if f (x)
+        
+{-        if f (x)
         then raise e
         else return ()
+-}

@@ -62,6 +62,7 @@ newEventName name = do
 -- | Attach an action to an Event.
 (+=) :: Eventer a => a -> IO () -> IO EventHandle
 (+=) e x = do
+-- a not used so explain this Mike
     let Event name a n xs = event e
     n2 <- readIORef n
     writeIORef n (n2+1)

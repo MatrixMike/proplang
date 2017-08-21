@@ -19,9 +19,10 @@ module PropLang.Event(
     blockEvent, unblockEvent
     ) where
 
-import Control.Monad
+--import Control.Monad
 import Data.IORef
 
+debug :: String -> IO ()
 debug = putStrLn
 
 -- |
@@ -35,7 +36,7 @@ instance Eventer Event where
 -- | Event type. 
 data Event = Event
                 String --  Event Name
-		(IORef Bool) --  Enable flag
+        (IORef Bool) --  Enable flag
                 (IORef Integer) --  Next action index
                 (IORef [(Integer, IO ())]) --  List of indices and actions
 
@@ -88,7 +89,7 @@ raise e = do
       debug $ "Raising event, " ++ show (length xs2) ++ ": " ++ name
       mapM_ snd xs2
      else 
-      debug $ "Not rasing disabled event: " ++ name
+      debug $ "Not raising disabled event: " ++ name
 
 
 -- | Block an Event.

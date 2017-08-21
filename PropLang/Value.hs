@@ -28,19 +28,19 @@ newValueIORef e x = do
         return $ Value (setter i) (readIORef i)
     where
         setter i x = do
-	    old <- readIORef i
-	    writeIORef i x
-	    if old /= x then do raise e
-	                else do return ()
+        old <- readIORef i
+        writeIORef i x
+        if old /= x then do raise e
+                    else do return ()
 
 newPredValue :: (Eq a) => a -> (a -> Bool) -> Event -> IO (Value a)
 newPredValue x f e = do
-	i <- newIORef x
-	return $ Value (setter i) (readIORef i)
+    i <- newIORef x
+    return $ Value (setter i) (readIORef i)
     where
-	setter i x = do
-	    old <- readIORef i
-	    writeIORef i x
-	    if f x
-		then raise e
-		else return ()
+    setter i x = do
+        old <- readIORef i
+        writeIORef i x
+        if f x
+        then raise e
+        else return ()

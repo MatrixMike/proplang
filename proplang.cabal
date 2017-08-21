@@ -14,6 +14,6 @@ Category:               User Interfaces
 Build-Depends:          base>=2.0
                     , gtk>=0.9.11
                     , glib>=0.9.11
---                    , glade>=0.9.11
+                    , glade>=0.9.11
 Exposed-modules:        PropLang.Gtk, PropLang.Variable, PropLang.Event, PropLang.Value
-Ghc-options:            --make -O2 -Wall
+Ghc-options:            -O2 -Wall

@@ -1,0 +1,45 @@
+ stack init
+Looking for .cabal or package.yaml files to use to init the project.
+Using cabal packages:
+- proplang.cabal
+
+Selecting the best among 11 snapshots...
+
+* Partially matches lts-9.1
+    glade not found
+        - proplang requires >=0.9.11
+
+Downloaded nightly-2017-08-20 build plan.    
+Missing some cabal revision files, updating indices
+Selected mirror https://s3.amazonaws.com/hackage.fpcomplete.com/                                 
+Downloading timestamp                                                                            
+Downloading snapshot                                                                             
+Updating index                                                                                   
+Updated package list downloaded                                                                  
+Populated index cache.                                                                           
+* Partially matches nightly-2017-08-20
+    glade not found
+        - proplang requires >=0.9.11
+    glib not found
+        - proplang requires >=0.9.11
+    gtk not found
+        - proplang requires >=0.9.11
+
+Downloaded lts-8.24 build plan.    
+* Partially matches lts-8.24
+    glade not found
+        - proplang requires >=0.9.11
+
+...
+
+
+Selected resolver: lts-9.1
+Resolver 'lts-9.1' does not have all the packages to match your requirements.
+    glade not found
+        - proplang requires >=0.9.11
+
+This may be resolved by:
+    - Using '--solver' to ask cabal-install to generate extra-deps, atop the chosen snapshot.
+    - Using '--omit-packages to exclude mismatching package(s).
+    - Using '--resolver' to specify a matching snapshot/resolver
+
